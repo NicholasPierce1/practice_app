@@ -1,0 +1,32 @@
+#mealTotal{
+    width: 50%;
+}
+
+h1{
+    width: 100%;
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.row{
+    margin-bottom: 50px;
+}
+
+#mealTotal, #tipTotal{
+    margin-right: 5px;
+}
+
+.infoDisplay{
+    margin-bottom: 0;
+}
+
+button{
+    border: none;
+    background: white;
+    font-size: 2em;
+    color: blue;
+}
+
+button:hover{
+    color:lightblue;
+}
