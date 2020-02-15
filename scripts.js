@@ -1,16 +1,40 @@
+// defines literal constants for string prefixes
+var tipTotalDisplayPrefix = "Tip Total: $";
+var taxTotalDisplayPrefix = "Tax: $";
+var grandTotalDisplayPrefix = "Grand Total: ";
+
+// defines constant, coefficient for tax total
+var taxTotalCoeffiecient = .055; // 5.5%
+
 // acquire document elements
 var mealTotalInput = document.getElementById("mealTotal");
 var tipTotalInput = document.getElementById("tipTotalPercent");
 var tipTotalDisplay = document.getElementById("tipTotalDisplay");
 var taxTotalDisplay = document.getElementById("taxAmount");
 var grandTotalDisplay = document.getElementById("grandTotal");
-var calculateTotalButton = document.getElementById("calculateTotal").addEventListener("click", () =>{
+document.getElementById("calculateTotal").addEventListener("click", () =>{
     
-    console.log(mealTotalInput.innerHTML == "");
+    // converts inputs to numerical versions
+    const mealInput = parseFloat(mealTotalInput.value);
+    const tipInput = parseFloat(tipTotalInput.value) / 100;
+    
+    // local memeber to hold grand total and tax total
+    const taxTotal = mealInput * taxTotalCoeffiecient;
+    const grandMealTotal = taxTotal + tipInput;
+    
+    console.log(`mealTotalInput: ${mealTotalInput.value}`);
+    console.log(`tip total input: ${tipTotalInput.value}`);
+    
+    // updates tip total with meal total * tip input / 100
+    tipTotalDisplay.innerHTML = `${tipTotalDisplayPrefix} ${Math.round(tipInput * 100)/100}`;
+    
+    
+    // updates tax total with mealTotal * tax rate
+    taxTotalDisplay.innerHTML = `${taxTotalDisplayPrefix} ${Math.round(taxTotal * 100)/100}`;
+    
+    // updates grand total with meal total
+   grandTotalDisplay.innerHTML = `${grandTotalDisplayPrefix} ${Math.round(grandMealTotal * 100)/100}`;
+    
 });
 
-// defines literal constants for string prefixes
-var tipTotalDisplayPrefix = "Tip Total: ";
-var taxTotalDisplayPrefix = "Tax: ";
-var grandTotalDisplayPrefix = "Grand Total: ";
 

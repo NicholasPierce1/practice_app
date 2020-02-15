@@ -30,3 +30,11 @@ button{
 button:hover{
     color:lightblue;
 }
+
+/* for all inputs of type number for its input, invokes the webkit to hide the inner spin button */
+input[type=number]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+
