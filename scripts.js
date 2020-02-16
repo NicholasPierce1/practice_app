@@ -16,7 +16,7 @@ document.getElementById("calculateTotal").addEventListener("click", () =>{
     
     // converts inputs to numerical versions
     const mealInput = parseFloat(mealTotalInput.value);
-    const tipInput = parseFloat(tipTotalInput.value) / 100;
+    const tipInput = parseFloat(tipTotalInput.value);
     
     // local memeber to hold grand total and tax total
     const taxTotal = mealInput * taxTotalCoeffiecient;
