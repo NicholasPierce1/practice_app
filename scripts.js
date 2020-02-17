@@ -1,7 +1,7 @@
 // defines literal constants for string prefixes
 var tipTotalDisplayPrefix = "Tip Total: $";
 var taxTotalDisplayPrefix = "Tax: $";
-var grandTotalDisplayPrefix = "Grand Total: ";
+var grandTotalDisplayPrefix = "Grand Total: $";
 
 // defines constant, coefficient for tax total
 var taxTotalCoeffiecient = .055; // 5.5%
