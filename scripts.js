@@ -12,7 +12,7 @@ var tipTotalInput = document.getElementById("tipTotalPercent");
 var tipTotalDisplay = document.getElementById("tipTotalDisplay");
 var taxTotalDisplay = document.getElementById("taxAmount");
 var grandTotalDisplay = document.getElementById("grandTotal");
-document.getElementById("calculateTotal").addEventListener("click", () =>{
+document.getElementById("calculateTotal").addEventListener("click", async () =>{
     
     // converts inputs to numerical versions
     const mealInput = parseFloat(mealTotalInput.value);
@@ -20,7 +20,7 @@ document.getElementById("calculateTotal").addEventListener("click", () =>{
     
     // local memeber to hold grand total and tax total
     const taxTotal = mealInput * taxTotalCoeffiecient;
-    const grandMealTotal = taxTotal + tipInput;
+    const grandMealTotal = taxTotal + tipInput + mealInput;
     
     console.log(`mealTotalInput: ${mealTotalInput.value}`);
     console.log(`tip total input: ${tipTotalInput.value}`);
